@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.middle {
+    margin: 20px 0;
+}
+
+.middle img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.bottom {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+</style>
+<body>
+
+    <div class="container">
+        <div class="top">
+            <h1>Bienvenue sur notre Page de Recrutement!</h1>
+            <p>Nous sommes ravis que vous envisagiez de rejoindre notre équipe. Veuillez remplir le formulaire ci-dessous pour postuler.</p>
+        </div>
+        <div class="middle">
+            <img src="./img/download.jpg" alt="Belle Image">
+        </div>
+        <div class="bottom">
+            <form id="myForm">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom">
+
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" placeholder="Entrez votre âge">
+
+                <label for="number">Numéro:</label>
+                <input type="text" id="number" name="number" placeholder="Entrez votre numéro">
+
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the form values
+    var name = document.getElementById('name').value;
+    var age = document.getElementById('age').value;
+    var number = document.getElementById('number').value;
+
+    // Validate the form fields
+    if (name && age && number) {
+        // Perform additional validation or processing here if needed
+
+        // Show success message with SweetAlert
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            html: `Form submitted successfully<br><strong>Name:</strong> ${name}<br><strong>Age:</strong> ${age}<br><strong>Number:</strong> ${number}`,
+            confirmButtonText: 'OK',
+        });
+
+        // Reset the form
+        document.getElementById('myForm').reset();
+    } else {
+        // Show an error message if any field is empty
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please fill out all the fields!',
+        });
+    }
+});
+
+
+    </script>
+</body>
+</html>

